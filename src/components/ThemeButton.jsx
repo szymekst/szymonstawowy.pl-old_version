@@ -32,7 +32,7 @@ const ThemeButton = () => {
     });
 
     return (
-        <label className="relative bg-black-200 dark:bg-white py-[8px] px-[16px] rounded-[29px] cursor-pointer">
+        <label className="relative flex items-center bg-black-200 dark:bg-white py-[8px] px-[16px] rounded-[29px] cursor-pointer">
             {""}
             <input
                 type="checkbox"

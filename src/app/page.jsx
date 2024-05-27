@@ -1,5 +1,6 @@
-import Image from "next/image";
+//Import components
+import TitleSection from "@components/TitleSection";
 
 export default function Home() {
-    return <h1>HELLO</h1>;
+    return <TitleSection title="Home" />;
 }
