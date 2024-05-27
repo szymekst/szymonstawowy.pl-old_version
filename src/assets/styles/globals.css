@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --white: #ffffff;
+    --black-100: #1a1a1a;
+    --black-200: #090d1f;
+    --gray-100: #c0c5d0;
+    --gray-200: #667085;
+    --purple-100: #f9f5ff;
+    --purple-200: #7f56d9;
+    --purple-300: #6941c6;
+    --blue-100: #eef4ff;
+    --blue-200: #3538cd;
+    --pink-100: #fdf2fa;
+    --pink-200: #c11574;
+}
+
+@layer base {
+    html,
+    body {
+        width: 100% !important;
+        min-height: 100dvh;
+        overflow-x: hidden !important;
+        position: relative;
+    }
+
+    h1 {
+        @apply text-7xl font-bold md:text-[10rem] lg:text-[15rem];
+    }
+    h2,
+    h3 {
+        @apply text-2xl font-semibold;
+    }
+    p {
+        @apply text-base text-gray-100 dark:text-gray-200;
+    }
+}
