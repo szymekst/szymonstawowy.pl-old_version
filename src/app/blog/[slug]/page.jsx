@@ -7,6 +7,9 @@ import Markdown from "markdown-to-jsx";
 //Import utils
 import getPostMetadata from "@/utils/getPostMetadata";
 
+import { metadata } from "@app/layout";
+
+//Get content from file with this slug, slug is taken from staticParams
 function getPostContent(slug) {
     const folder = "posts/";
     const file = folder + `${slug}.mdx`;
@@ -16,20 +19,20 @@ function getPostContent(slug) {
     return matterResult;
 }
 
+//Create static params, in this case slug
 export const generateStaticParams = async () => {
     const posts = getPostMetadata("posts");
     return posts.map((post) => ({ slug: post.slug }));
 };
 
-export async function generateMetadata({ params, searchParams }) {
-    const id = params?.slug ? " ⋅ " + params?.slug : "";
+//Return title of the page
+export async function generateMetadata({ params }) {
     return {
-        title: `The Bubbly Baker ${id.replaceAll("_", " ")}`,
+        title: `${params?.slug + " | " + metadata.title}`,
     };
 }
 
 export default function BlogPost(props) {
-    console.log(props);
     const slug = props.params.slug;
     const post = getPostContent(slug);
     return <Markdown>{post.content}</Markdown>;
