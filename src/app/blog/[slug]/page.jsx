@@ -1,11 +1,11 @@
-import Markdown from "markdown-to-jsx";
-import getPostMetadata from "@/utils/getPostMetadata";
-import React from "react";
+//Import FileSystem from Node.js
 import fs from "fs";
+//Import gray-matter and Markdown-to-jsx package
 import matter from "gray-matter";
+import Markdown from "markdown-to-jsx";
 
-//Import components
-import TitleSection from "@components/TitleSection";
+//Import utils
+import getPostMetadata from "@/utils/getPostMetadata";
 
 function getPostContent(slug) {
     const folder = "posts/";
@@ -29,6 +29,7 @@ export async function generateMetadata({ params, searchParams }) {
 }
 
 export default function BlogPost(props) {
+    console.log(props);
     const slug = props.params.slug;
     const post = getPostContent(slug);
     return <Markdown>{post.content}</Markdown>;

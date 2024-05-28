@@ -1,9 +1,12 @@
+//Import Next.js Stuff
+import Link from "next/link";
+
+//Import utils and components
 import getPostMetadata from "@/utils/getPostMetadata";
 import TitleSection from "@components/TitleSection";
 
 const page = () => {
     const postMetadata = getPostMetadata("posts");
-    console.log(postMetadata);
     return (
         <>
             <TitleSection title="The Blog" />
@@ -15,8 +18,9 @@ const page = () => {
                     <div className="flex flex-col gap-[16px] md:grid md:grid-cols-2 md:gap-x-[16px] md:gap-y-[24px] lg:grid-cols-3 lg:gap-x-[32px] lg:gap-y-[48px] ">
                         {postMetadata.map((post, index) => {
                             return (
-                                <div
+                                <Link
                                     key={index}
+                                    href={`/blog/${post.slug}`}
                                     className="flex flex-col [&_*]:cursor-pointer group"
                                 >
                                     <div className="h-[240px] w-full mb-[32px]"></div>
@@ -27,7 +31,7 @@ const page = () => {
                                         </h3>
                                         <p></p>
                                     </div>
-                                </div>
+                                </Link>
                             );
                         })}
                     </div>
