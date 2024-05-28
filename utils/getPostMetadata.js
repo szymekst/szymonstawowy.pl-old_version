@@ -18,6 +18,8 @@ export default function getPostMetadata(basePath) {
         return {
             title: matterResult.data.title,
             slug: filename.replace(".mdx", ""),
+            img: matterResult.data.featImg,
+            alt: matterResult.data.alt,
         };
     });
     return posts;

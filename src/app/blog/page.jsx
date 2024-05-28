@@ -1,5 +1,6 @@
 //Import Next.js Stuff
 import Link from "next/link";
+import Image from "next/image";
 
 //Import utils and components
 import getPostMetadata from "@/utils/getPostMetadata";
@@ -23,7 +24,18 @@ const page = () => {
                                     href={`/blog/${post.slug}`}
                                     className="flex flex-col [&_*]:cursor-pointer group"
                                 >
-                                    <div className="h-[240px] w-full mb-[32px]"></div>
+                                    <div className="h-[240px] w-full mb-[32px]">
+                                        <Image
+                                            src={
+                                                post.img !== undefined
+                                                    ? post.img
+                                                    : "/blog-imgs/placeholder-image.png"
+                                            }
+                                            width={400}
+                                            height={300}
+                                            alt={post.alt}
+                                        />
+                                    </div>
                                     <div className="flex flex-col gap-[12px]">
                                         <p className="text-purple-100 text-sm font-semibold"></p>
                                         <h3 className="dark:text-white">
