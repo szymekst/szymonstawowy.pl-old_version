@@ -53,7 +53,6 @@ const createDate = (stringDate) => {
 
 const page = () => {
     const postMetadata = getPostMetadata("posts");
-    console.log(postMetadata);
     return (
         <>
             <TitleSection title="The Blog" />
