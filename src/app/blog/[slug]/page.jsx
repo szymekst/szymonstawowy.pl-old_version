@@ -3,10 +3,6 @@ import fs from "fs";
 //Import packages
 import matter from "gray-matter";
 import Markdown from "markdown-to-jsx";
-import slugify from "slugify";
-
-//Import utils
-import getPostMetadata from "@/utils/getPostMetadata";
 
 import { metadata } from "@app/layout";
 
@@ -20,22 +16,15 @@ function getPostContent(slug) {
     return matterResult;
 }
 
-//Create static params, in this case slug
-export const generateStaticParams = async () => {
-    const posts = getPostMetadata("posts");
-    return posts.map((post) => ({ slug: post.slug }));
-};
-
 //Return title of the page
 export async function generateMetadata({ params }) {
+    const post = getPostContent(params.slug);
     return {
-        title: `${params?.slug + " | " + metadata.title}`,
+        title: `${post.data.title + " | " + metadata.title}`,
     };
 }
 
-export default function BlogPost(props) {
-    console.log(props);
-    const slug = props.params.slug;
-    const post = getPostContent(slug);
+export default function BlogPost({ params }) {
+    const post = getPostContent(params.slug);
     return <Markdown>{post.content}</Markdown>;
 }

@@ -53,6 +53,7 @@ const createDate = (stringDate) => {
 
 const page = () => {
     const postMetadata = getPostMetadata("posts");
+    const numPages = postMetadata.length;
     return (
         <>
             <TitleSection title="The Blog" />
@@ -88,7 +89,7 @@ const page = () => {
                                         <h3 className="dark:text-white">
                                             {post.title}
                                         </h3>
-                                        <p></p>
+                                        <p>{post.excerpt}</p>
                                     </div>
                                 </Link>
                             );

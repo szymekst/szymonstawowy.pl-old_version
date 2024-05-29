@@ -16,9 +16,10 @@ export default function getPostMetadata(basePath) {
         const fileContents = fs.readFileSync(`${basePath}/${filename}`, "utf8");
         const matterResult = matter(fileContents);
         return {
-            title: matterResult.data.title,
             slug: filename.replace(".mdx", ""),
+            title: matterResult.data.title,
             date: matterResult.data.date,
+            excerpt: matterResult.data.excerpt,
             img: matterResult.data.featImg,
             alt: matterResult.data.alt,
         };
