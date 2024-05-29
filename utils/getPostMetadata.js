@@ -18,6 +18,7 @@ export default function getPostMetadata(basePath) {
         return {
             title: matterResult.data.title,
             slug: filename.replace(".mdx", ""),
+            date: matterResult.data.date,
             img: matterResult.data.featImg,
             alt: matterResult.data.alt,
         };

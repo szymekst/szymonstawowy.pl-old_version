@@ -6,8 +6,54 @@ import Image from "next/image";
 import getPostMetadata from "@/utils/getPostMetadata";
 import TitleSection from "@components/TitleSection";
 
+const createDate = (stringDate) => {
+    const days = [
+        "Niedziela",
+        "Poniedziałek",
+        "Wtorek",
+        "Środa",
+        "Czwartek",
+        "Piątek",
+        "Sobota",
+    ];
+
+    const months = [
+        "Sty",
+        "Lut",
+        "Mar",
+        "Kwi",
+        "Maj",
+        "Cze",
+        "Lip",
+        "Sie",
+        "Wrz",
+        "Paź",
+        "Lis",
+        "Gru",
+    ];
+
+    //Create Array from date with format DD.MM.YYYY
+    const dateToArray = stringDate.split(".");
+
+    //Convert date to YYYY-MM-DD
+    const dateObject = new Date(
+        dateToArray[2],
+        dateToArray[1] - 1,
+        dateToArray[0]
+    );
+
+    //Get day & month name
+    const dayName = days[dateObject.getDay()];
+    const monthName = months[dateObject.getMonth()];
+
+    const stringToReturn = `${dayName}, ${dateObject.getDate()} ${monthName} ${dateObject.getFullYear()}`;
+
+    return stringToReturn;
+};
+
 const page = () => {
     const postMetadata = getPostMetadata("posts");
+    console.log(postMetadata);
     return (
         <>
             <TitleSection title="The Blog" />
@@ -37,7 +83,9 @@ const page = () => {
                                         />
                                     </div>
                                     <div className="flex flex-col gap-[12px]">
-                                        <p className="text-purple-100 text-sm font-semibold"></p>
+                                        <p className="text-purple-200 text-sm font-semibold">
+                                            {createDate(post.date)}
+                                        </p>
                                         <h3 className="dark:text-white">
                                             {post.title}
                                         </h3>
