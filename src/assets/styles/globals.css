@@ -40,7 +40,7 @@
 
 @layer components {
     .pagination_button {
-        @apply w-[40px] h-[40px] rounded-[8px] flex justify-center items-center;
+        @apply w-[40px] h-[40px] rounded-lg flex justify-center items-center;
     }
 
     .pagination_button__active {
@@ -48,6 +48,6 @@
     }
 
     .blog_post {
-        @apply [&_*]:text-gray-200 [&_*]:dark:text-gray-100 [&_*]:mb-[12px] [&_h1]:text-2xl [&_h2]:text-lg [&_h3]:text-base [&_ol]:list-inside [&_ol]:list-decimal [&_ul]:list-inside [&_li]:mb-0;
+        @apply [&_*]:text-gray-200 [&_*]:dark:text-gray-100 [&_*]:mb-3 [&_h1]:text-2xl [&_h2]:text-lg [&_h3]:text-base [&_ol]:list-inside [&_ol]:list-decimal [&_ul]:list-inside [&_li]:mb-0;
     }
 }

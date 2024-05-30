@@ -50,8 +50,8 @@ export default function BlogPost({ params }) {
     const post = getPostContent(params.title);
     return (
         <div className="dark:bg-black-200">
-            <div className="container py-[20px] lg:py-[30px]">
-                <div className="flex flex-col gap-[16px] md:gap-[32px] min-h-screen">
+            <div className="container py-5 lg:py-8">
+                <div className="flex flex-col gap-4 md:gap-8 min-h-screen">
                     <p className="text-purple-200 text-sm font-semibold">
                         {createDate(post.data.date)}
                     </p>
@@ -69,7 +69,7 @@ export default function BlogPost({ params }) {
                         quality={100}
                         className="w-full max-h-[260px] md:max-h-[430px] object-cover"
                     />
-                    <div className="flex flex-col gap-[12px]">
+                    <div className="flex flex-col gap-3">
                         <Markdown className="blog_post">
                             {post.content}
                         </Markdown>

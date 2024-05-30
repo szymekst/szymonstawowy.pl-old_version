@@ -32,7 +32,7 @@ const ThemeButton = () => {
     });
 
     return (
-        <label className="relative flex items-center bg-black-200 dark:bg-white py-[8px] px-[16px] rounded-[29px] cursor-pointer">
+        <label className="relative flex items-center bg-black-200 dark:bg-white py-2 px-4 rounded-[29px] cursor-pointer">
             {""}
             <input
                 type="checkbox"
@@ -41,7 +41,7 @@ const ThemeButton = () => {
                     setDarkMode(!darkMode);
                 }}
             />
-            <div className="relative flex gap-[16px]">
+            <div className="relative flex gap-4">
                 <Circle className="absolute right-0 dark:left-0 dark:[&_rect]:fill-black-200" />
                 <Sun />
                 <Moon />

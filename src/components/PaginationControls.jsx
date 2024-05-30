@@ -28,7 +28,7 @@ const PaginationControls = ({
     return (
         <div>
             {numOfPages > 1 ? (
-                <div className="pt-[30px] pb-[50px] flex flex-col items-center gap-[20px] text-sm font-medium dark:text-white md:flex-row md:justify-between md:pt-[50px] md:pb-[60px] lg:py-[30px]">
+                <div className="pt-8 pb-12 flex flex-col items-center gap-5 text-sm font-medium dark:text-white md:flex-row md:justify-between md:pt-12 md:pb-16 lg:py-8">
                     <button
                         disabled={!hasPrevPage}
                         onClick={() => {

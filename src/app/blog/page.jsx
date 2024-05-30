@@ -63,7 +63,7 @@ const page = ({ searchParams }) => {
     const postMetadata = exportPostMetadata();
 
     const currentPage = searchParams["currentPage"] ?? "1";
-    const postsPerPage = searchParams["postsPerPage"] ?? "3";
+    const postsPerPage = searchParams["postsPerPage"] ?? "6";
 
     const skipPosts = (Number(currentPage) - 1) * Number(postsPerPage);
     const limitPosts = skipPosts + Number(postsPerPage);
@@ -79,23 +79,24 @@ const page = ({ searchParams }) => {
             <TitleSection title="The Blog" />
             <div className="dark:bg-black-200">
                 <div className="container">
-                    <h2 className="dark:text-white mb-[16px]">
-                        All blog posts
-                    </h2>
-                    <div className="flex flex-col gap-[16px] md:grid md:grid-cols-2 md:gap-x-[16px] md:gap-y-[24px] lg:grid-cols-3 lg:gap-x-[32px] lg:gap-y-[48px] ">
+                    <h2 className="dark:text-white mb-4">All blog posts</h2>
+                    <div
+                        className={`flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-x-4 md:gap-y-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-12 ${
+                            numOfPages <= 1 && "pb-5 md:pb-8"
+                        }`}
+                    >
                         {allPosts.map((post, index) => {
                             const slug = slugify(post.title, {
                                 lower: true,
                                 remove: /[*+~.()'"!:@]/g,
                             });
-                            console.log("ur slugified slug", slug);
                             return (
                                 <Link
                                     key={index}
                                     href={`/blog/${slug}`}
                                     className="flex flex-col [&_*]:cursor-pointer group"
                                 >
-                                    <div className="h-[240px] w-full mb-[32px]">
+                                    <div className="h-[240px] w-full mb-8">
                                         <Image
                                             src={
                                                 post.img ??
@@ -106,7 +107,7 @@ const page = ({ searchParams }) => {
                                             alt={post.alt}
                                         />
                                     </div>
-                                    <div className="flex flex-col gap-[12px]">
+                                    <div className="flex flex-col gap-3">
                                         <p className="text-purple-200 text-sm font-semibold">
                                             {createDate(post.date)}
                                         </p>

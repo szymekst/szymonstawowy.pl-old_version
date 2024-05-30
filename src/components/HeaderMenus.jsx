@@ -35,7 +35,7 @@ const HeaderMenus = ({ title }) => {
     return (
         <>
             <header className="dark:bg-black-200 ">
-                <div className="flex justify-between items-center container py-[20px] lg:py-[30px]">
+                <div className="flex justify-between items-center container py-5 lg:py-8">
                     <Link
                         href="/"
                         className="text-lg font-bold h-full dark:text-white"
@@ -45,20 +45,20 @@ const HeaderMenus = ({ title }) => {
                     <button
                         role="button"
                         aria-label="hamburger-menu"
-                        className="w-[32px] h-[32px] flex flex-col gap-[4px] justify-center items-center md:hidden"
+                        className="w-[32px] h-[32px] flex flex-col gap-1 justify-center items-center md:hidden"
                         onClick={() => {
                             setShow((prev) => !prev);
                         }}
                     >
                         <Hamburger className="dark:[&_path]:fill-white" />
                     </button>
-                    <div className="hidden md:flex gap-[14px]">
+                    <div className="hidden md:flex gap-3">
                         {menuLinks.map((link, index) => {
                             return (
                                 <Link
                                     href={link.url}
                                     key={index}
-                                    className="w-full text-center text-lg dark:text-white p-[8px]"
+                                    className="w-full text-center text-lg dark:text-white p-2"
                                 >
                                     {link.name}
                                 </Link>
@@ -69,20 +69,20 @@ const HeaderMenus = ({ title }) => {
                 </div>
                 <div
                     className={`${
-                        show ? "translate-y-0" : "translate-y-[-100%]"
+                        show ? "translate-y-0" : "-translate-y-full"
                     } w-screen max-h-dvh bg-white dark:bg-black-200 absolute top-0 bottom-0 left-0 z-50 flex flex-col justify-center items-center transition`}
                 >
                     <Link
                         href="/"
                         className="font-semibold text-lg dark:text-white"
                     ></Link>
-                    <div className="flex flex-col gap-[20px] items-center pt-[54px]">
+                    <div className="flex flex-col gap-5 items-center pt-14">
                         {menuLinks.map((link, index) => {
                             return (
                                 <Link
                                     href={link.url}
                                     key={index}
-                                    className="w-full text-center text-lg dark:text-white p-[8px]"
+                                    className="w-full text-center text-lg dark:text-white p-2"
                                     onClick={() => {
                                         setShow(false);
                                     }}
@@ -93,7 +93,7 @@ const HeaderMenus = ({ title }) => {
                         })}
                         <ThemeButton />
                     </div>
-                    <div className="absolute bottom-0 p-[20px] w-full flex justify-center bg-white dark:bg-black-200">
+                    <div className="absolute bottom-0 p-5 w-full flex justify-center bg-white dark:bg-black-200">
                         <button
                             role="button"
                             aria-label="close-menu"
