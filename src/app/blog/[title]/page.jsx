@@ -8,11 +8,11 @@ import Markdown from "markdown-to-jsx";
 import slugify from "slugify";
 
 //Import utils & functions <-- DRY
-import { exportPostMetadata } from "../page";
 import { createDate } from "../page";
 
 //Import metadata
 import { metadata } from "@app/layout";
+import getPostMetadata from "@/utils/getPostMetadata";
 
 //Get current post data by title
 const getCurrentPost = (postMetadata, titleProp) => {
@@ -28,7 +28,7 @@ const getCurrentPost = (postMetadata, titleProp) => {
 
 //Get content from MDX file
 const getPostContent = (titleProp) => {
-    const postMetadata = exportPostMetadata();
+    const postMetadata = getPostMetadata("posts");
     const currentPost = getCurrentPost(postMetadata, titleProp);
 
     const file = currentPost.filePath;

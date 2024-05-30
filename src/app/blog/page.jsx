@@ -55,15 +55,11 @@ export const createDate = (stringDate) => {
     return stringToReturn;
 };
 
-export const exportPostMetadata = () => {
-    return getPostMetadata("posts");
-};
-
 const page = ({ searchParams }) => {
-    const postMetadata = exportPostMetadata();
+    const postMetadata = getPostMetadata("posts");
 
     const currentPage = searchParams["currentPage"] ?? "1";
-    const postsPerPage = searchParams["postsPerPage"] ?? "6";
+    const postsPerPage = searchParams["postsPerPage"] ?? "5";
 
     const skipPosts = (Number(currentPage) - 1) * Number(postsPerPage);
     const limitPosts = skipPosts + Number(postsPerPage);
