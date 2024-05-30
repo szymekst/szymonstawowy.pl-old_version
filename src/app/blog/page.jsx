@@ -90,9 +90,9 @@ const page = ({ searchParams }) => {
                                 <Link
                                     key={index}
                                     href={`/blog/${slug}`}
-                                    className="flex flex-col [&_*]:cursor-pointer group"
+                                    className="flex flex-col [&_*]:cursor-pointer group group"
                                 >
-                                    <div className="h-[240px] w-full mb-8">
+                                    <div className="h-[240px] w-full mb-6 md:mb-8">
                                         <Image
                                             src={
                                                 post.img ??
@@ -101,13 +101,14 @@ const page = ({ searchParams }) => {
                                             width={400}
                                             height={300}
                                             alt={post.alt}
+                                            className="w-full h-full object-cover group-hover:brightness-95 transition-all"
                                         />
                                     </div>
                                     <div className="flex flex-col gap-3">
                                         <p className="text-purple-200 text-sm font-semibold">
                                             {createDate(post.date)}
                                         </p>
-                                        <h3 className="dark:text-white">
+                                        <h3 className="dark:text-white group-hover:text-purple-200 transition-colors">
                                             {post.title}
                                         </h3>
                                         <p>{post.excerpt}</p>

@@ -38,7 +38,7 @@ const HeaderMenus = ({ title }) => {
                 <div className="flex justify-between items-center container py-5 lg:py-8">
                     <Link
                         href="/"
-                        className="text-lg font-bold h-full dark:text-white"
+                        className="hover_link text-lg font-bold h-full dark:text-white"
                     >
                         {title}
                     </Link>
@@ -58,7 +58,7 @@ const HeaderMenus = ({ title }) => {
                                 <Link
                                     href={link.url}
                                     key={index}
-                                    className="w-full text-center text-lg dark:text-white p-2"
+                                    className="hover_link_after w-full text-center text-lg dark:text-white p-2"
                                 >
                                     {link.name}
                                 </Link>
@@ -70,7 +70,7 @@ const HeaderMenus = ({ title }) => {
                 <div
                     className={`${
                         show ? "translate-y-0" : "-translate-y-full"
-                    } w-screen max-h-dvh bg-white dark:bg-black-200 absolute top-0 bottom-0 left-0 z-50 flex flex-col justify-center items-center transition`}
+                    } w-screen max-h-dvh bg-white dark:bg-black-200 absolute top-0 bottom-0 left-0 z-50 flex flex-col justify-center items-center transition md:hidden`}
                 >
                     <Link
                         href="/"

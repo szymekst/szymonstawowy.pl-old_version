@@ -27,7 +27,6 @@ module.exports = {
             purple: {
                 100: "var(--purple-100)",
                 200: "var(--purple-200)",
-                300: "var(--purple-300)",
             },
             blue: {
                 100: "var(--blue-100)",

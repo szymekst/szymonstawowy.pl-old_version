@@ -5,7 +5,7 @@ export const FooterLinks = [
     },
     {
         name: "GitHub",
-        url: "https://www.github.com",
+        url: "https://www.github.com/szymekst",
     },
     {
         name: "Email",
@@ -28,7 +28,7 @@ const Footer = () => {
                                 <a
                                     key={index}
                                     href={link.url}
-                                    className="text-xl dark:text-white"
+                                    className="hover_link text-xl dark:text-white"
                                 >
                                     {link.name}
                                 </a>

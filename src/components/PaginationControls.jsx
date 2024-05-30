@@ -32,7 +32,7 @@ const PaginationControls = ({
                     <button
                         disabled={!hasPrevPage}
                         onClick={() => {
-                            router.push(prevPagePath);
+                            router.push(prevPagePath, { scroll: false });
                         }}
                     >
                         ← Poprzednia
@@ -41,7 +41,7 @@ const PaginationControls = ({
                         {Array.from({ length: numOfPages }, (_, i) =>
                             numOfPages >= 8 ? (
                                 <React.Fragment key={i}>
-                                    {i < 3 ? (
+                                    {i < 3 && (
                                         <button
                                             className={`${
                                                 currentPage == i + 1 &&
@@ -51,24 +51,20 @@ const PaginationControls = ({
                                                 router.push(
                                                     `/blog/?currentPage=${
                                                         i + 1
-                                                    }&postsPerPage=${postsPerPage}`
+                                                    }&postsPerPage=${postsPerPage}`,
+                                                    { scroll: false }
                                                 );
                                             }}
                                         >
                                             {i + 1}
                                         </button>
-                                    ) : (
-                                        ""
                                     )}
-                                    {i === 4 ? (
+                                    {i === 4 && (
                                         <div className="pagination_button">
                                             ...
                                         </div>
-                                    ) : (
-                                        ""
                                     )}
-
-                                    {i >= numOfPages - 3 && i <= numOfPages ? (
+                                    {i >= numOfPages - 3 && i <= numOfPages && (
                                         <>
                                             <button
                                                 className={`${
@@ -79,15 +75,14 @@ const PaginationControls = ({
                                                     router.push(
                                                         `/blog/?currentPage=${
                                                             i + 1
-                                                        }&postsPerPage=${postsPerPage}`
+                                                        }&postsPerPage=${postsPerPage}`,
+                                                        { scroll: false }
                                                     );
                                                 }}
                                             >
                                                 {i + 1}
                                             </button>
                                         </>
-                                    ) : (
-                                        ""
                                     )}
                                 </React.Fragment>
                             ) : (
@@ -101,7 +96,8 @@ const PaginationControls = ({
                                             router.push(
                                                 `/blog/?currentPage=${
                                                     i + 1
-                                                }&postsPerPage=${postsPerPage}`
+                                                }&postsPerPage=${postsPerPage}`,
+                                                { scroll: false }
                                             );
                                         }}
                                     >
@@ -114,7 +110,7 @@ const PaginationControls = ({
                     <button
                         disabled={!hasNextPage}
                         onClick={() => {
-                            router.push(nextPagePath);
+                            router.push(nextPagePath, { scroll: false });
                         }}
                     >
                         Nastepna →

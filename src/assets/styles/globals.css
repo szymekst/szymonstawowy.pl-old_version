@@ -10,7 +10,6 @@
     --gray-200: #667085;
     --purple-100: #f9f5ff;
     --purple-200: #7f56d9;
-    --purple-300: #6941c6;
     --blue-100: #eef4ff;
     --blue-200: #3538cd;
     --pink-100: #fdf2fa;
@@ -40,14 +39,22 @@
 
 @layer components {
     .pagination_button {
-        @apply w-[40px] h-[40px] rounded-lg flex justify-center items-center;
+        @apply w-[40px] h-[40px] rounded-lg flex justify-center items-center hover:bg-purple-100 dark:hover:bg-white dark:hover:text-black-100 transition-all;
     }
 
     .pagination_button__active {
-        @apply !bg-purple-100 text-purple-200 dark:!bg-white dark:text-black-100;
+        @apply !bg-purple-100 text-purple-200 dark:!bg-white dark:text-black-100 hover:brightness-95;
     }
 
     .blog_post {
         @apply [&_*]:text-gray-200 [&_*]:dark:text-gray-100 [&_*]:mb-3 [&_h1]:text-2xl [&_h2]:text-lg [&_h3]:text-base [&_ol]:list-inside [&_ol]:list-decimal [&_ul]:list-inside [&_li]:mb-0;
+    }
+
+    .hover_link {
+        @apply transition-all hover:text-purple-200;
+    }
+
+    .hover_link_after {
+        @apply relative transition-all hover:text-purple-200 after:content-[''] after:absolute after:bottom-0 after:right-0 after:w-0 after:h-[2px] after:bg-purple-200 hover:after:w-full hover:after:left-0 after:transition-all after:duration-200;
     }
 }
