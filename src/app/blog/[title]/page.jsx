@@ -49,8 +49,8 @@ export async function generateMetadata({ params }) {
 export default function BlogPost({ params }) {
     const post = getPostContent(params.title);
     return (
-        <div className="dark:bg-black-200 ">
-            <div className="container">
+        <div className="dark:bg-black-200">
+            <div className="container py-[20px] lg:py-[30px]">
                 <div className="flex flex-col gap-[16px] md:gap-[32px] pb-[30px]">
                     <p className="text-purple-200 text-sm font-semibold">
                         {createDate(post.data.date)}
@@ -64,7 +64,7 @@ export default function BlogPost({ params }) {
                             "/blog-imgs/placeholder-image.png"
                         }
                         alt={post.data.alt}
-                        width={1366}
+                        width={1360}
                         height={430}
                         className="w-full max-h-[260px] md:max-h-[430px] object-cover"
                     />

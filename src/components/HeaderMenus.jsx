@@ -3,7 +3,6 @@
 //Import React and NextJS Stuff
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 //Import components
 import ThemeButton from "./ThemeButton";
@@ -36,7 +35,7 @@ const HeaderMenus = ({ title }) => {
     return (
         <>
             <header className="dark:bg-black-200 ">
-                <div className="flex justify-between items-center container py-[20px]">
+                <div className="flex justify-between items-center container py-[20px] lg:py-[30px]">
                     <Link
                         href="/"
                         className="text-lg font-bold h-full dark:text-white"
