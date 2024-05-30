@@ -1,0 +1,33 @@
+---
+title: "Używanie Hooków w React: useEffect"
+date: "20.05.2024"
+excerpt: "Zastosowanie hooka useEffect w React."
+featImg: "/blog-imgs/placeholder-image.png"
+alt: Placeholder image
+---
+
+Hook useEffect jest jednym z najważniejszych hooków w React, używanym do zarządzania efektami ubocznymi w komponentach funkcyjnych. Przed wprowadzeniem hooków, efekty uboczne były obsługiwane głównie w metodach cyklu życia komponentów klasowych, takich jak componentDidMount i componentDidUpdate. useEffect pozwala na bardziej deklaratywne podejście do zarządzania efektami ubocznymi.
+
+## Czym jest useEffect?
+
+useEffect jest hookiem, który wykonuje funkcję po renderowaniu komponentu. Może być używany do różnych zadań, takich jak pobieranie danych, subskrypcje, czy manipulacje DOM. useEffect działa podobnie do componentDidMount, componentDidUpdate, i componentWillUnmount w komponentach klasowych.
+
+## Składnia useEffect
+
+useEffect przyjmuje dwa argumenty: funkcję, która wykonuje efekt uboczny, oraz opcjonalną tablicę zależności. Tablica zależności określa, kiedy efekt uboczny powinien być ponownie wykonany. Jeśli tablica jest pusta, efekt jest wykonywany tylko raz, po pierwszym renderowaniu.
+
+## Zarządzanie zależnościami
+
+Tablica zależności jest kluczowym elementem useEffect, ponieważ kontroluje, kiedy efekt jest ponownie wykonywany. Można do niej dodać zmienne stanu lub propsy, które, gdy się zmienią, spowodują ponowne wykonanie efektu. To pozwala na precyzyjne zarządzanie momentem wykonania efektu i optymalizację wydajności.
+
+## Czyszczenie efektów
+
+useEffect może również zwracać funkcję czyszczącą, która jest wykonywana przed kolejnym uruchomieniem efektu lub przed odmontowaniem komponentu. Jest to przydatne do czyszczenia subskrypcji, timerów, lub innych zasobów, które mogą powodować wycieki pamięci.
+
+## Przykłady zastosowania
+
+Typowe użycie useEffect obejmuje pobieranie danych z API po załadowaniu komponentu, ustawianie subskrypcji na kanały WebSocket, czy manipulowanie tytułem dokumentu. useEffect może być używany również do uruchamiania animacji lub aktualizacji layoutu po zmianie rozmiaru okna.
+
+## Podsumowanie
+
+useEffect jest wszechstronnym narzędziem do zarządzania efektami ubocznymi w komponentach funkcyjnych React. Jego elastyczność i prostota sprawiają, że jest kluczowym elementem nowoczesnych aplikacji React. Dzięki useEffect deweloperzy mogą lepiej kontrolować cykl życia efektów ubocznych, co prowadzi do bardziej zoptymalizowanych i łatwiejszych do utrzymania aplikacji.

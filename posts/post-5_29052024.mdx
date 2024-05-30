@@ -1,0 +1,35 @@
+---
+title: "Tworzenie Komponentów Funkcyjnych w React"
+date: "29.05.2024"
+excerpt: "Jak tworzyć i używać komponenty funkcyjne w React?"
+featImg: "/blog-imgs/placeholder-image.png"
+alt: Placeholder image
+---
+
+Komponenty funkcyjne w React stały się popularne od wprowadzenia hooków w wersji 16.8. Przedtem komponenty klasowe były głównym sposobem tworzenia komponentów z logiką stanu i efektami ubocznymi. Jednak komponenty funkcyjne oferują prostszą i bardziej zwięzłą składnię, co sprawia, że są łatwiejsze do zrozumienia i utrzymania.
+
+## Czym są komponenty funkcyjne?
+
+Komponenty funkcyjne to funkcje JavaScript, które przyjmują propsy jako argument i zwracają elementy React (zazwyczaj JSX). Są to czyste funkcje bez wewnętrznego stanu lub metod cyklu życia, ale z wprowadzeniem hooków stały się bardziej funkcjonalne.
+
+## Dlaczego warto używać komponentów funkcyjnych?
+
+1. Prostota i czytelność: Komponenty funkcyjne są zazwyczaj krótsze i bardziej zwięzłe niż komponenty klasowe. To sprawia, że kod jest łatwiejszy do zrozumienia i utrzymania.
+2. Mniej kodu boilerplate: Komponenty funkcyjne nie wymagają deklaracji klasy ani metod cyklu życia, co redukuje ilość kodu boilerplate.
+3. Hooki: Dzięki hookom, takim jak useState i useEffect, komponenty funkcyjne mogą zarządzać stanem i efektami ubocznymi, co czyni je równie potężnymi jak komponenty klasowe.
+
+## Hooki w komponentach funkcyjnych
+
+Hooki to funkcje, które pozwalają "zahaczyć" się o wewnętrzne mechanizmy React, takie jak stan i cykl życia komponentu. Najpopularniejsze hooki to:
+
+1. useState: Umożliwia dodanie stanu do komponentu funkcyjnego.
+2. useEffect: Umożliwia wykonywanie efektów ubocznych, takich jak fetchowanie danych lub bezpośrednie manipulowanie DOM.
+3. useContext: Umożliwia korzystanie z Context API, co pozwala na zarządzanie stanem globalnym bez prop drillingu.
+
+## Przykłady zastosowania
+
+Przykładem prostego komponentu funkcyjnego może być licznik, który używa hooka useState do zarządzania stanem liczby kliknięć. useEffect może być użyty do logowania liczby kliknięć do konsoli za każdym razem, gdy liczba ta się zmienia.
+
+## Podsumowanie
+
+Komponenty funkcyjne stały się standardem w nowoczesnych aplikacjach React. Ich prostota, zwięzłość oraz potężne możliwości dzięki hookom sprawiają, że są preferowanym wyborem dla wielu deweloperów. Zrozumienie i wykorzystanie komponentów funkcyjnych może znacząco poprawić jakość i utrzymanie kodu w projektach React.

@@ -1,0 +1,33 @@
+---
+title: "Wprowadzenie do Next.js: Routing"
+date: "27.05.2024"
+excerpt: "Podstawy routingu w Next.js."
+featImg: "/blog-imgs/placeholder-image.png"
+alt: Placeholder image
+---
+
+Next.js jest frameworkiem opartym na React, który upraszcza wiele aspektów tworzenia aplikacji webowych, w tym routing. Routing w Next.js jest niezwykle prosty i opiera się na strukturze plików w folderze pages. Każdy plik w tym folderze staje się automatycznie stroną dostępną pod odpowiednią ścieżką URL.
+
+## Statyczne strony
+
+Statyczne strony w Next.js są tworzone poprzez dodanie plików do folderu pages. Na przykład, pages/about.js będzie dostępny pod URL /about. Taki sposób tworzenia stron jest intuicyjny i eliminuje potrzebę ręcznego definiowania routingu.
+
+## Dynamiczne strony
+
+Next.js umożliwia również tworzenie dynamicznych ścieżek za pomocą składni nawiasów kwadratowych. Przykładem może być strona bloga, gdzie każdy post ma unikalny identyfikator w URL. W takim przypadku można utworzyć plik pages/posts/[id].js, który będzie obsługiwał wszystkie dynamiczne ścieżki, takie jak /posts/1, /posts/2, itd.
+
+## Linkowanie między stronami
+
+Next.js zapewnia komponent Link, który jest używany do nawigacji między stronami. Link zapewnia optymalizację nawigacji, taką jak prefetching, co zwiększa wydajność aplikacji.
+
+## Routing API
+
+Next.js oferuje również API do programowego routingu za pomocą hooka useRouter. Hook ten zwraca obiekt routera, który można użyć do nawigacji, pobierania bieżącej ścieżki, parametrów i wielu innych operacji związanych z routingiem.
+
+## Optymalizacja
+
+Next.js automatycznie optymalizuje routing, co prowadzi do lepszego ładowania stron i wyższej wydajności. Statyczne generowanie stron (Static Generation) i renderowanie po stronie serwera (Server-Side Rendering) są wbudowane, co umożliwia dynamiczne pobieranie danych i generowanie stron na serwerze.
+
+## Podsumowanie
+
+Routing w Next.js jest prosty i efektywny dzięki wykorzystaniu struktury plików i wbudowanych funkcji. Zarówno statyczne, jak i dynamiczne strony są łatwe do stworzenia i zarządzania. Dodatkowo, komponent Link i API routingu sprawiają, że nawigacja w aplikacji jest płynna i szybka. Next.js upraszcza proces tworzenia aplikacji webowych, jednocześnie oferując zaawansowane możliwości optymalizacji.

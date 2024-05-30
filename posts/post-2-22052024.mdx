@@ -1,0 +1,36 @@
+---
+title: "Stylowanie w Next.js z użyciem styled-jsx"
+date: "22.05.2024"
+excerpt: "Jak stylować komponenty w Next.js z użyciem styled-jsx."
+featImg: "/blog-imgs/placeholder-image.png"
+alt: Placeholder image
+---
+
+Next.js jest frameworkiem, który umożliwia efektywne tworzenie aplikacji webowych opartych na React. Jedną z unikalnych cech Next.js jest wsparcie dla styled-jsx, narzędzia do pisania stylów CSS w zakresie konkretnego komponentu. styled-jsx pozwala na izolację stylów, co zapobiega konfliktom nazw klas i zapewnia modularność.
+
+## Czym jest styled-jsx?
+
+styled-jsx to biblioteka CSS-in-JS stworzona przez Vercel, zespół stojący za Next.js. Pozwala na pisanie CSS bezpośrednio wewnątrz komponentów React, z pełną izolacją stylów. Oznacza to, że style zdefiniowane dla jednego komponentu nie wpływają na inne komponenty, nawet jeśli mają te same nazwy klas.
+
+## Zalety styled-jsx
+
+1. Izolacja stylów: Każdy komponent może mieć swoje style, co eliminuje problemy z konfliktami nazw klas.
+2. Modularność: Style są zdefiniowane w tym samym pliku co komponent, co ułatwia zarządzanie i utrzymanie kodu.
+3. Dynamika: styled-jsx pozwala na pisanie dynamicznych stylów, które mogą być modyfikowane na podstawie propsów lub stanu komponentu.
+4. Wydajność: Stylowanie komponentów w Next.js jest zoptymalizowane, co prowadzi do lepszej wydajności aplikacji.
+
+## Jak używać styled-jsx
+
+Aby użyć styled-jsx, należy dodać tag `<style jsx>` wewnątrz komponentu React. Można w nim pisać zwykły CSS lub korzystać z wbudowanych mechanizmów dynamicznego stylowania. Stylowanie może być złożone, z użyciem zmiennych, pseudoelementów i media queries.
+
+## Dynamiczne style
+
+styled-jsx umożliwia również dynamiczne stylowanie za pomocą interpolacji. Można używać zmiennych JavaScript w definicjach stylów, co pozwala na tworzenie bardziej zaawansowanych i interaktywnych interfejsów użytkownika.
+
+## Integracja z innymi narzędziami
+
+styled-jsx współpracuje z innymi narzędziami CSS-in-JS, takimi jak styled-components czy emotion, co daje deweloperom dużą elastyczność w wyborze narzędzi stylowania. Można również używać globalnych stylów, jeśli jest to konieczne, przez dodanie odpowiednich atrybutów do tagu `<style jsx>`.
+
+## Podsumowanie
+
+styled-jsx jest potężnym narzędziem do stylowania komponentów w Next.js. Jego główne zalety to izolacja stylów, modularność, dynamika i wydajność. Dzięki styled-jsx deweloperzy mogą pisać czyste, modularne i łatwe do utrzymania style bez obawy o konflikty nazw klas. To sprawia, że styled-jsx jest doskonałym wyborem dla stylowania aplikacji Next.js.

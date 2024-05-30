@@ -1,0 +1,38 @@
+---
+title: "Zarządzanie Stanem w React z Context API"
+date: "29.05.2024"
+excerpt: "Używanie Context API do zarządzania stanem globalnym."
+featImg: "/blog-imgs/placeholder-image.png"
+alt: Placeholder image
+---
+
+Context API w React jest potężnym narzędziem do zarządzania stanem globalnym aplikacji bez potrzeby przekazywania propsów przez wiele poziomów komponentów. Jest to szczególnie przydatne w większych aplikacjach, gdzie zarządzanie stanem może stać się skomplikowane.
+
+## Czym jest Context API?
+
+Context API to mechanizm w React, który pozwala na przekazywanie danych przez drzewo komponentów bez potrzeby ręcznego przekazywania propsów na każdym poziomie. Składa się z dwóch głównych elementów: Context.Provider i Context.Consumer.
+
+## Jak działa Context API?
+
+Context API działa poprzez tworzenie kontekstu za pomocą React.createContext(). Kontekst ten udostępnia dane (stan) do wszystkich komponentów znajdujących się w drzewie komponentów wewnątrz Provider. Każdy komponent może uzyskać dostęp do tych danych, używając Consumer lub hooka useContext.
+
+## Zastosowania Context API
+
+1. Globalne zarządzanie stanem: Context API jest idealne do zarządzania stanem, który musi być dostępny w wielu miejscach aplikacji, takim jak dane użytkownika, motywy, czy ustawienia aplikacji.
+2. Unikanie prop drillingu: Dzięki Context API, można uniknąć przekazywania propsów przez wiele poziomów komponentów, co prowadzi do czystszego i bardziej czytelnego kodu.
+3. Łatwa integracja z hookami: useContext hook sprawia, że korzystanie z Context API w komponentach funkcyjnych jest proste i intuicyjne.
+
+## Zalety Context API
+
+1. Prostota: Context API jest prosty do zrozumienia i wdrożenia, co sprawia, że jest dostępny nawet dla początkujących deweloperów.
+2. Modularność: Kontekst może być definiowany i używany w dowolnym miejscu w aplikacji, co pozwala na modularne zarządzanie stanem.
+3. Wydajność: Dzięki precyzyjnemu określaniu, kiedy komponenty mają być renderowane, Context API może być wydajne w zarządzaniu stanem globalnym.
+
+## Wyzwania związane z Context API
+
+Mimo że Context API jest potężnym narzędziem, nie jest pozbawione wyzwań. Nieprawidłowe zarządzanie stanem w kontekście może prowadzić do nadmiernych renderów, co może wpływać na wydajność aplikacji. Ważne jest, aby odpowiednio strukturyzować i optymalizować kontekst, aby uniknąć tych problemów.
+
+## Podsumowanie
+
+Context API w React jest wszechstronnym narzędziem do zarządzania stanem globalnym, oferującym
+`import { Exo_2 } from "next/font/google`
