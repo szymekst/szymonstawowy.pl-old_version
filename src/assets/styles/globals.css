@@ -46,4 +46,8 @@
     .pagination_button__active {
         @apply !bg-purple-100 text-purple-200 dark:!bg-white dark:text-black-100;
     }
+
+    .blog_post {
+        @apply [&_*]:text-gray-200 [&_*]:dark:text-gray-100 [&_*]:mb-[12px] [&_h1]:text-2xl [&_h2]:text-lg [&_h3]:text-base [&_ol]:list-inside [&_ol]:list-decimal [&_ul]:list-inside [&_li]:mb-0;
+    }
 }
