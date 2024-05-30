@@ -66,6 +66,7 @@ export default function BlogPost({ params }) {
                         alt={post.data.alt}
                         width={1360}
                         height={430}
+                        quality={100}
                         className="w-full max-h-[260px] md:max-h-[430px] object-cover"
                     />
                     <div className="flex flex-col gap-[12px]">
