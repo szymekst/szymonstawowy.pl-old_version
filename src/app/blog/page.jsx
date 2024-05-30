@@ -2,12 +2,15 @@
 import Link from "next/link";
 import Image from "next/image";
 
+//Import packages
+import slugify from "slugify";
+
 //Import utils and components
 import getPostMetadata from "@/utils/getPostMetadata";
 import TitleSection from "@components/TitleSection";
 import PaginationControls from "@components/PaginationControls";
 
-const createDate = (stringDate) => {
+export const createDate = (stringDate) => {
     const days = [
         "Niedziela",
         "Poniedziałek",
@@ -52,8 +55,12 @@ const createDate = (stringDate) => {
     return stringToReturn;
 };
 
+export const exportPostMetadata = () => {
+    return getPostMetadata("posts");
+};
+
 const page = ({ searchParams }) => {
-    const postMetadata = getPostMetadata("posts");
+    const postMetadata = exportPostMetadata();
 
     const currentPage = searchParams["currentPage"] ?? "1";
     const postsPerPage = searchParams["postsPerPage"] ?? "3";
@@ -77,18 +84,22 @@ const page = ({ searchParams }) => {
                     </h2>
                     <div className="flex flex-col gap-[16px] md:grid md:grid-cols-2 md:gap-x-[16px] md:gap-y-[24px] lg:grid-cols-3 lg:gap-x-[32px] lg:gap-y-[48px] ">
                         {allPosts.map((post, index) => {
+                            const slug = slugify(post.title, {
+                                lower: true,
+                                remove: /[*+~.()'"!:@]/g,
+                            });
+                            console.log("ur slugified slug", slug);
                             return (
                                 <Link
                                     key={index}
-                                    href={`/blog/${post.slug}`}
+                                    href={`/blog/${slug}`}
                                     className="flex flex-col [&_*]:cursor-pointer group"
                                 >
                                     <div className="h-[240px] w-full mb-[32px]">
                                         <Image
                                             src={
-                                                post.img !== undefined
-                                                    ? post.img
-                                                    : "/blog-imgs/placeholder-image.png"
+                                                post.img ??
+                                                "/blog-imgs/placeholder-image.png"
                                             }
                                             width={400}
                                             height={300}

@@ -15,13 +15,14 @@ export default function getPostMetadata(basePath) {
     const posts = mdxPosts.map((filename) => {
         const fileContents = fs.readFileSync(`${basePath}/${filename}`, "utf8");
         const matterResult = matter(fileContents);
+        const filePath = `${basePath}/${filename}`;
         return {
-            slug: filename.replace(".mdx", ""),
             title: matterResult.data.title,
             date: matterResult.data.date,
             excerpt: matterResult.data.excerpt,
             img: matterResult.data.featImg,
             alt: matterResult.data.alt,
+            filePath: filePath,
         };
     });
     return posts;
