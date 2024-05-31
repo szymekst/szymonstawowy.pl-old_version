@@ -26,7 +26,7 @@
     }
 
     h1 {
-        @apply text-7xl font-bold md:text-[10rem] lg:text-[15rem];
+        @apply text-7xl leading-normal font-bold md:text-[10rem] lg:text-[15rem];
     }
     h2,
     h3 {
