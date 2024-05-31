@@ -2,5 +2,10 @@
 import TitleSection from "@components/TitleSection";
 
 export default function Home() {
-    return <TitleSection title="Home" />;
+    return (
+        <>
+            <TitleSection title="Główna" />
+            <div></div>
+        </>
+    );
 }
