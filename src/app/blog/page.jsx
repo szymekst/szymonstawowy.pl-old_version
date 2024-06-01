@@ -70,7 +70,6 @@ const page = ({ searchParams }) => {
 
     const skipPosts = (Number(currentPage) - 1) * Number(postsPerPage);
     const limitPosts = skipPosts + Number(postsPerPage);
-
     const allPosts = postMetadata.slice(skipPosts, limitPosts);
 
     const numOfPages = Math.ceil(

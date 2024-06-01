@@ -1,13 +1,14 @@
 //Import FileSystem from Node.js
 import fs from "fs";
+import path from "path";
 //Import gray-matter package
 import matter from "gray-matter";
 
 export default function getPostMetadata(basePath) {
     //Create path to folder e.g. "posts/"
-    const folder = "./" + basePath + "/";
+    const folder = basePath + "/";
     //Read contents of given directiory
-    const files = fs.readdirSync(folder);
+    const files = fs.readdirSync(path.join((process.cwd(), folder)));
     //Select only .mdx files
     const mdxPosts = files.filter((file) => file.endsWith(".mdx"));
 
