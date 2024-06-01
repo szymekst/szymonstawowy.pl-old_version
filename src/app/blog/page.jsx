@@ -59,7 +59,7 @@ const page = ({ searchParams }) => {
     const postMetadata = getPostMetadata("posts");
 
     const currentPage = searchParams["currentPage"] ?? "1";
-    const postsPerPage = searchParams["postsPerPage"] ?? "5";
+    const postsPerPage = searchParams["postsPerPage"] ?? "6";
 
     const skipPosts = (Number(currentPage) - 1) * Number(postsPerPage);
     const limitPosts = skipPosts + Number(postsPerPage);
