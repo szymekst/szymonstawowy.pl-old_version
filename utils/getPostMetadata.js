@@ -1,4 +1,4 @@
-//Import FileSystem from Node.js
+//Import FileSystem and path from Node.js
 import fs from "fs";
 import path from "path";
 //Import gray-matter package
@@ -8,13 +8,15 @@ export default function getPostMetadata(basePath) {
     //Create path to folder e.g. "posts/"
     const folder = basePath + "/";
     //Read contents of given directiory
-    const files = fs.readdirSync(path.join((process.cwd(), folder)));
+    const files = fs.readdirSync(path.resolve(process.cwd(), folder));
     //Select only .mdx files
     const mdxPosts = files.filter((file) => file.endsWith(".mdx"));
 
     //Create Posts array with title and slug
     const posts = mdxPosts.map((filename) => {
-        const fileContents = fs.readFileSync(`${basePath}/${filename}`, "utf8");
+        const fileContents = fs.readFileSync(
+            path.resolve(process.cwd(), `${basePath}/${filename}`)
+        );
         const matterResult = matter(fileContents);
         const filePath = `${basePath}/${filename}`;
         return {
