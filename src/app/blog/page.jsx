@@ -104,6 +104,8 @@ const page = ({ searchParams }) => {
                                                 post.img ??
                                                 "/blog-imgs/placeholder-image.png"
                                             }
+                                            placeholder="blur"
+                                            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPctevgfgAHYQL2xHt5JgAAAABJRU5ErkJggg=="
                                             width={400}
                                             height={300}
                                             alt={post.alt}

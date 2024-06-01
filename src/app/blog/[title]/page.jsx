@@ -63,6 +63,8 @@ export default function BlogPost({ params }) {
                             post.data.featImg ??
                             "/blog-imgs/placeholder-image.png"
                         }
+                        placeholder="blur"
+                        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPctevgfgAHYQL2xHt5JgAAAABJRU5ErkJggg=="
                         alt={post.data.alt}
                         width={1360}
                         height={430}
