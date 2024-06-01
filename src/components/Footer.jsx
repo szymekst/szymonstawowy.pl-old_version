@@ -1,9 +1,5 @@
 export const FooterLinks = [
     {
-        name: "LinkedIn",
-        url: "https://www.linkedin.com",
-    },
-    {
         name: "GitHub",
         url: "https://www.github.com/szymekst",
     },
