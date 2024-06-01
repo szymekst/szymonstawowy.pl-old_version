@@ -9,6 +9,14 @@ import GitSVG from "@assets/svg/git.svg";
 import JavascriptSVG from "@assets/svg/javascript.svg";
 import FigmaSVG from "@assets/svg/figma.svg";
 
+import { metadata } from "./layout";
+
+export async function generateMetadata() {
+    return {
+        title: `${"Strona główna" + " | " + metadata.title}`,
+    };
+}
+
 const mySocials = [
     {
         name: "GitHub",

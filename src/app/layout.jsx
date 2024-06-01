@@ -12,8 +12,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
     title: "szymonstawowy.pl",
-    description:
-        "Junior Frontend Developer wita na pokładzie, zapraszam, rozejrzyj się!",
+    description: "Junior Frontend Developer, zapraszam, rozejrzyj się!",
 };
 
 export default function RootLayout({ children }) {

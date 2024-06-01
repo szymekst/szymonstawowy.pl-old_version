@@ -5,7 +5,7 @@ import matter from "gray-matter";
 
 export default function getPostMetadata(basePath) {
     //Create path to folder e.g. "posts/"
-    const folder = basePath + "/";
+    const folder = "./" + basePath + "/";
     //Read contents of given directiory
     const files = fs.readdirSync(folder);
     //Select only .mdx files

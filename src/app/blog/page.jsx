@@ -9,6 +9,13 @@ import slugify from "slugify";
 import getPostMetadata from "@/utils/getPostMetadata";
 import TitleSection from "@components/TitleSection";
 import PaginationControls from "@components/PaginationControls";
+import { metadata } from "@app/layout";
+
+export async function generateMetadata() {
+    return {
+        title: `${"Blog" + " | " + metadata.title}`,
+    };
+}
 
 export const createDate = (stringDate) => {
     const days = [
