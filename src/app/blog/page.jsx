@@ -71,7 +71,6 @@ const page = ({ searchParams }) => {
     const skipPosts = (Number(currentPage) - 1) * Number(postsPerPage);
     const limitPosts = skipPosts + Number(postsPerPage);
     const allPosts = postMetadata.reverse().slice(skipPosts, limitPosts);
-    console.log("wszystkie posty", allPosts);
 
     const numOfPages = Math.ceil(
         Number(postMetadata.length) / Number(postsPerPage)
