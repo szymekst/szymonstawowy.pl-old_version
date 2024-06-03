@@ -32,7 +32,14 @@ const PaginationControls = ({
                     <button
                         disabled={!hasPrevPage}
                         onClick={() => {
+                            e.preventDefault();
                             router.push(prevPagePath, { scroll: false });
+                            window.scrollTo({
+                                // top: whereToScroll.offsetTop,
+                                top: 0,
+                                left: 0,
+                                behavior: "smooth",
+                            });
                         }}
                     >
                         ← Poprzednia
@@ -55,6 +62,12 @@ const PaginationControls = ({
                                                     // FIXME scroll after click go up but smooth
                                                     { scroll: false }
                                                 );
+                                                window.scrollTo({
+                                                    // top: whereToScroll.offsetTop,
+                                                    top: 0,
+                                                    left: 0,
+                                                    behavior: "smooth",
+                                                });
                                             }}
                                         >
                                             {i + 1}
@@ -79,6 +92,12 @@ const PaginationControls = ({
                                                         }&postsPerPage=${postsPerPage}`,
                                                         { scroll: false }
                                                     );
+                                                    window.scrollTo({
+                                                        // top: whereToScroll.offsetTop,
+                                                        top: 0,
+                                                        left: 0,
+                                                        behavior: "smooth",
+                                                    });
                                                 }}
                                             >
                                                 {i + 1}
@@ -100,6 +119,12 @@ const PaginationControls = ({
                                                 }&postsPerPage=${postsPerPage}`,
                                                 { scroll: false }
                                             );
+                                            window.scrollTo({
+                                                // top: whereToScroll.offsetTop,
+                                                top: 0,
+                                                left: 0,
+                                                behavior: "smooth",
+                                            });
                                         }}
                                     >
                                         {i + 1}
@@ -110,8 +135,15 @@ const PaginationControls = ({
                     </div>
                     <button
                         disabled={!hasNextPage}
-                        onClick={() => {
+                        onClick={(e) => {
+                            e.preventDefault();
                             router.push(nextPagePath, { scroll: false });
+                            window.scrollTo({
+                                // top: whereToScroll.offsetTop,
+                                top: 0,
+                                left: 0,
+                                behavior: "smooth",
+                            });
                         }}
                     >
                         Nastepna →
