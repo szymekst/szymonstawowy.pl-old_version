@@ -31,7 +31,7 @@ const PaginationControls = ({
                 <div className="pt-8 pb-12 flex flex-col items-center gap-5 text-sm font-medium dark:text-white md:flex-row md:justify-between md:pt-12 md:pb-16 lg:py-8">
                     <button
                         disabled={!hasPrevPage}
-                        onClick={() => {
+                        onClick={(e) => {
                             e.preventDefault();
                             router.push(prevPagePath, { scroll: false });
                             window.scrollTo({
