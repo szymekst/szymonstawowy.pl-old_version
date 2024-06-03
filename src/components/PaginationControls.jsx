@@ -52,6 +52,7 @@ const PaginationControls = ({
                                                     `/blog/?currentPage=${
                                                         i + 1
                                                     }&postsPerPage=${postsPerPage}`,
+                                                    // FIXME scroll after click go up but smooth
                                                     { scroll: false }
                                                 );
                                             }}
