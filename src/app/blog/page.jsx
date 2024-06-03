@@ -70,7 +70,11 @@ const page = ({ searchParams }) => {
 
     const skipPosts = (Number(currentPage) - 1) * Number(postsPerPage);
     const limitPosts = skipPosts + Number(postsPerPage);
-    const allPosts = postMetadata.reverse().slice(skipPosts, limitPosts);
+
+    // FIXME convert a.date and b.date into data object then sort
+    const allPosts = postMetadata
+        .sort((a, b) => a.date.localeCompare(b.date))
+        .slice(skipPosts, limitPosts);
 
     const numOfPages = Math.ceil(
         Number(postMetadata.length) / Number(postsPerPage)
