@@ -17,7 +17,21 @@ export async function generateMetadata() {
     };
 }
 
-export const createDate = (stringDate) => {
+const createDateObject = (stringDate) => {
+    //Create Array from date with format DD.MM.YYYY
+    const dateToArray = stringDate.split(".");
+
+    //Convert date to YYYY-MM-DD
+    const dateObject = new Date(
+        dateToArray[2],
+        dateToArray[1] - 1,
+        dateToArray[0]
+    );
+
+    return dateObject;
+};
+
+export const createDateString = (stringDate) => {
     const days = [
         "Niedziela",
         "Poniedziałek",
@@ -43,15 +57,7 @@ export const createDate = (stringDate) => {
         "Gru",
     ];
 
-    //Create Array from date with format DD.MM.YYYY
-    const dateToArray = stringDate.split(".");
-
-    //Convert date to YYYY-MM-DD
-    const dateObject = new Date(
-        dateToArray[2],
-        dateToArray[1] - 1,
-        dateToArray[0]
-    );
+    const dateObject = createDateObject(stringDate);
 
     //Get day & month name
     const dayName = days[dateObject.getDay()];
@@ -73,7 +79,12 @@ const page = ({ searchParams }) => {
 
     // FIXME convert a.date and b.date into data object then sort
     const allPosts = postMetadata
-        .sort((a, b) => a.date.localeCompare(b.date))
+        .sort((a, b) => {
+            const dateObjectA = createDateObject(a.date);
+            const dateObjectB = createDateObject(b.date);
+
+            return dateObjectB - dateObjectA;
+        })
         .slice(skipPosts, limitPosts);
 
     const numOfPages = Math.ceil(
@@ -118,7 +129,7 @@ const page = ({ searchParams }) => {
                                     </div>
                                     <div className="flex flex-col gap-3">
                                         <p className="text-purple-200 text-sm font-semibold">
-                                            {createDate(post.date)}
+                                            {createDateString(post.date)}
                                         </p>
                                         <h3 className="dark:text-white group-hover:text-purple-200 transition-colors">
                                             {post.title}
