@@ -30,8 +30,18 @@ const Footer = () => {
                                 </a>
                             );
                         })}
-                        <p className="text-center text-black-100 text-xl pt-8 dark:text-white md:pt-0 md:-order-1">
+                        <p className="text-center text-black-100 text-xl dark:text-white  md:-order-1">
                             &copy; {currentYear()}
+                        </p>
+                        <p className="text-xl text-black-100 dark:text-white pt-8 md:pt-0">
+                            🖤 to{" "}
+                            <a href="https://www.figma.com/community/file/1318529372146880502/illustration-based-portfolio-website-template">
+                                Design
+                            </a>{" "}
+                            &{" "}
+                            <a href="https://www.figma.com/community/file/1235152009438565697/the-blog-a-web-personal-blog">
+                                Design #2
+                            </a>
                         </p>
                     </div>
                 </div>
