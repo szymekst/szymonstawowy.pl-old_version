@@ -8,7 +8,7 @@ import Markdown from "markdown-to-jsx";
 import slugify from "slugify";
 
 //Import utils & functions <-- DRY
-import { createDate } from "../page";
+import { createDateString } from "../page";
 
 //Import metadata
 import { metadata } from "@app/layout";
@@ -53,7 +53,7 @@ export default function BlogPost({ params }) {
             <div className="container py-5 lg:py-8">
                 <div className="flex flex-col gap-4 md:gap-8 min-h-screen">
                     <p className="text-purple-200 text-sm font-semibold">
-                        {createDate(post.data.date)}
+                        {createDateString(post.data.date)}
                     </p>
                     <h1 className="text-lg md:text-3xl dark:text-white">
                         {post.data.title}
