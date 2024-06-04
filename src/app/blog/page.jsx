@@ -96,7 +96,9 @@ const page = ({ searchParams }) => {
             <TitleSection title="The Blog" />
             <div className="dark:bg-black-200">
                 <div className="container">
-                    <h2 className="dark:text-white mb-4">All blog posts</h2>
+                    <h2 id="blog_heading" className="dark:text-white mb-4">
+                        All blog posts
+                    </h2>
                     <div
                         className={`flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-x-4 md:gap-y-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-12 ${
                             numOfPages <= 1 && "pb-5 md:pb-8"
@@ -146,6 +148,7 @@ const page = ({ searchParams }) => {
                         numOfPages={numOfPages}
                         hasPrevPage={skipPosts > 0}
                         hasNextPage={limitPosts < postMetadata.length}
+                        to="blog_heading"
                     />
                 </div>
             </div>

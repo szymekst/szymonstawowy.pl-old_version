@@ -4,12 +4,22 @@
 import React from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 
+const scrollToId = (to) => {
+    let whereToScroll = document.getElementById(to);
+    window.scrollTo({
+        top: whereToScroll.offsetTop,
+        left: 0,
+        behavior: "smooth",
+    });
+};
+
 const PaginationControls = ({
     currentPageProp,
     postsPerPageProp,
     numOfPages,
     hasPrevPage,
     hasNextPage,
+    to,
 }) => {
     const router = useRouter();
     const searchParams = useSearchParams();
@@ -34,12 +44,7 @@ const PaginationControls = ({
                         onClick={(e) => {
                             e.preventDefault();
                             router.push(prevPagePath, { scroll: false });
-                            window.scrollTo({
-                                // top: whereToScroll.offsetTop,
-                                top: 0,
-                                left: 0,
-                                behavior: "smooth",
-                            });
+                            scrollToId(to);
                         }}
                     >
                         ← Poprzednia
@@ -59,15 +64,9 @@ const PaginationControls = ({
                                                     `/blog/?currentPage=${
                                                         i + 1
                                                     }&postsPerPage=${postsPerPage}`,
-                                                    // FIXME scroll after click go up but smooth
                                                     { scroll: false }
                                                 );
-                                                window.scrollTo({
-                                                    // top: whereToScroll.offsetTop,
-                                                    top: 0,
-                                                    left: 0,
-                                                    behavior: "smooth",
-                                                });
+                                                scrollToId(to);
                                             }}
                                         >
                                             {i + 1}
@@ -92,12 +91,7 @@ const PaginationControls = ({
                                                         }&postsPerPage=${postsPerPage}`,
                                                         { scroll: false }
                                                     );
-                                                    window.scrollTo({
-                                                        // top: whereToScroll.offsetTop,
-                                                        top: 0,
-                                                        left: 0,
-                                                        behavior: "smooth",
-                                                    });
+                                                    scrollToId(to);
                                                 }}
                                             >
                                                 {i + 1}
@@ -119,12 +113,7 @@ const PaginationControls = ({
                                                 }&postsPerPage=${postsPerPage}`,
                                                 { scroll: false }
                                             );
-                                            window.scrollTo({
-                                                // top: whereToScroll.offsetTop,
-                                                top: 0,
-                                                left: 0,
-                                                behavior: "smooth",
-                                            });
+                                            scrollToId(to);
                                         }}
                                     >
                                         {i + 1}
@@ -138,12 +127,7 @@ const PaginationControls = ({
                         onClick={(e) => {
                             e.preventDefault();
                             router.push(nextPagePath, { scroll: false });
-                            window.scrollTo({
-                                // top: whereToScroll.offsetTop,
-                                top: 0,
-                                left: 0,
-                                behavior: "smooth",
-                            });
+                            scrollToId(to);
                         }}
                     >
                         Nastepna →
