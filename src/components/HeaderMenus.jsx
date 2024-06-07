@@ -14,7 +14,7 @@ import CloseIcon from "@/assets/svg/close.svg";
 //Links in menu
 export const menuLinks = [
     {
-        name: "Home",
+        name: "Główna",
         url: "/",
     },
     {

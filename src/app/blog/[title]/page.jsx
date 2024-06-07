@@ -5,10 +5,10 @@ import Image from "next/image";
 //Import packages
 import matter from "gray-matter";
 import Markdown from "markdown-to-jsx";
-import slugify from "slugify";
 
 //Import utils & functions <-- DRY
 import { createDateString } from "../page";
+import { createBlogPostSlug } from "@/utils/createBlogPostSlug";
 
 //Import metadata
 import { metadata } from "@app/layout";
@@ -17,11 +17,7 @@ import getPostMetadata from "@/utils/getPostMetadata";
 //Get current post data by title
 const getCurrentPost = (postMetadata, titleProp) => {
     const currentByTitle = postMetadata.filter(
-        (post) =>
-            slugify(post.title, {
-                lower: true,
-                remove: /[*+~.()'"!:@]/g,
-            }) === titleProp
+        (post) => createBlogPostSlug("", post.title) === titleProp
     );
     return currentByTitle[0];
 };

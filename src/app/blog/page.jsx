@@ -2,13 +2,12 @@
 import Link from "next/link";
 import Image from "next/image";
 
-//Import packages
-import slugify from "slugify";
-
 //Import utils and components
 import getPostMetadata from "@/utils/getPostMetadata";
 import TitleSection from "@components/TitleSection";
 import PaginationControls from "@components/PaginationControls";
+import { createBlogPostSlug } from "@/utils/createBlogPostSlug";
+import RecentPosts from "@components/RecentPosts";
 import { metadata } from "@app/layout";
 
 export async function generateMetadata() {
@@ -17,7 +16,7 @@ export async function generateMetadata() {
     };
 }
 
-const createDateObject = (stringDate) => {
+export const createDateObject = (stringDate) => {
     //Create Array from date with format DD.MM.YYYY
     const dateToArray = stringDate.split(".");
 
@@ -78,14 +77,7 @@ const page = ({ searchParams }) => {
     const limitPosts = skipPosts + Number(postsPerPage);
 
     // FIXME convert a.date and b.date into data object then sort
-    const allPosts = postMetadata
-        .sort((a, b) => {
-            const dateObjectA = createDateObject(a.date);
-            const dateObjectB = createDateObject(b.date);
-
-            return dateObjectB - dateObjectA;
-        })
-        .slice(skipPosts, limitPosts);
+    const allPosts = postMetadata.slice(skipPosts, limitPosts);
 
     const numOfPages = Math.ceil(
         Number(postMetadata.length) / Number(postsPerPage)
@@ -93,11 +85,12 @@ const page = ({ searchParams }) => {
 
     return (
         <>
-            <TitleSection title="The Blog" />
+            <TitleSection title="Blog" />
+            <RecentPosts />
             <div className="dark:bg-black-200">
                 <div className="container">
                     <h2 id="blog_heading" className="dark:text-white mb-4">
-                        All blog posts
+                        Wszystkie wpisy na blogu
                     </h2>
                     <div
                         className={`flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-x-4 md:gap-y-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-12 ${
@@ -105,14 +98,13 @@ const page = ({ searchParams }) => {
                         }`}
                     >
                         {allPosts.map((post, index) => {
-                            const slug = slugify(post.title, {
-                                lower: true,
-                                remove: /[*+~.()'"!:@]/g,
-                            });
                             return (
                                 <Link
                                     key={index}
-                                    href={`/blog/${slug}`}
+                                    href={createBlogPostSlug(
+                                        "/blog/",
+                                        post.title
+                                    )}
                                     className="flex flex-col [&_*]:cursor-pointer group group"
                                 >
                                     <div className="h-[240px] w-full mb-6 md:mb-8">
