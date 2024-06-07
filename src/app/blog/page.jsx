@@ -86,7 +86,7 @@ const page = ({ searchParams }) => {
     return (
         <>
             <TitleSection title="Blog" />
-            <RecentPosts />
+            {/* <RecentPosts /> */}
             <div className="dark:bg-black-200">
                 <div className="container">
                     <h2 id="blog_heading" className="dark:text-white mb-4">
