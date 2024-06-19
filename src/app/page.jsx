@@ -74,8 +74,8 @@ export default function Home() {
                     </h1>
                     <p>
                         W najbliższej przyszłości chciałbym aspirować do
-                        zostania Frontend Developerem, a dalej kto wie... Może i
-                        nawet Fullstack Developerem! 😊
+                        zostania Frontend Developerem, a dalej kto wie...
+                        <br /> Może i nawet Fullstack Developerem! 😊
                     </p>
                     <div className="flex gap-6">
                         {mySocials.map((social, index) => {
@@ -156,8 +156,7 @@ export default function Home() {
                         TailwindCSS oraz MDX.
                     </p>
                     <p>
-                        Aktualnie programowaniem nie zajmuję się zawodowo lecz
-                        bardzo chciałbym to zmienić. Kiedy nie programuje to
+                        Programuje hobbistycznie, a kiedy tego nie robie to
                         czytam dużo książek (głownie literatura faktu oraz
                         piękna) oraz biegam krótkie dystanse - pomaga mi to
                         zachować czystą i spokojną głowe.
