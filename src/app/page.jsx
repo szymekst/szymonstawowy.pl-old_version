@@ -128,14 +128,14 @@ export default function Home() {
                     </h2>
                     <p>
                         Jestem pasjonatą i samoukiem programowania w
-                        specjalizacji frontendowej (Next.js & Tailwind). Z
-                        ogromnym entuzjazjem podchodzę do poznawania nowych
-                        technologii. Pixel perfect design i pisanie jasnego,
-                        czytelnego, wysoce wydajnego kodu są dla mnie ważne.
+                        Front-endzie (Next.js & Tailwind). Z ogromnym
+                        entuzjazjem podchodzę do poznawania nowych technologii.
+                        Pixel perfect design i pisanie jasnego, czytelnego,
+                        wysoce wydajnego kodu są dla mnie ważne.
                     </p>
                     <p>
                         Moja przygoda z programowaniem rozpoczęła się jeszcze
-                        przed pójściem do szkoły średniem (2018). Na zajęciach z
+                        przed pójściem do szkoły średniej (2018). Na zajęciach z
                         Frontendu zrozumiałem, że jest to coś dla mnie i
                         chciałbym z tym związać swoją przyszłośc. <br />
                         Kontynuowałem, więc nauke na własną rękę i próbowałem
