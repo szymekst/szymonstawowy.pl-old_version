@@ -1,4 +1,5 @@
 import Image from "next/image";
+import React from "react";
 
 import cialoizdrowie from "@assets/img/cialoizdrowieWebsite.png";
 import parafiawszystkich from "@assets/img/parafiawszystkichWebsite.png";
@@ -7,14 +8,16 @@ import ziebicka14 from "@assets/img/ziebicka14Website.png";
 import medidesk from "@assets/img/medideskWebsite.png";
 import funk from "@assets/img/funkWebsite.png";
 
+import ReadMoreSVG from "@assets/svg/read-more.svg";
+
 const realisations = [
     {
-        pageName: "vumo.ai",
+        pageName: "Vumo.ai",
         link: "https://vumo.ai/",
         image: vumo,
         techStack: ["React", "TailwindCSS", "Gatsby", "GraphQL", "WordPress"],
         description:
-            "Vumo.ai - strona tworzona od zera. Dla tego projektu wystąpiła konieczność poznania i zaimplementowania GatbsbyJS oraz GraphQL. Zintegrowanie strony z WordPressem pozwala na korzystanie z niego jako Headless CMS. W tym projekcie pojawiła się potrzeba napisania programu wysyłającego zdjęcie do API dostarczonego przez klienta, a następnie pobranie i wyświetlenie zwróconego, przerobionego zdjęcia. Podczas tworzenia strony dla Vumo.ai miałem przyjemność po raz pierwszy skorzystać z TailwindCSS, który stał się moim ulubionym frameworkiem CSS.",
+            "Strona tworzona od zera. Dla tego projektu wystąpiła konieczność poznania i zaimplementowania GatbsbyJS oraz GraphQL. Zintegrowanie strony z WordPressem pozwala na korzystanie z niego jako Headless CMS. W tym projekcie pojawiła się potrzeba napisania programu wysyłającego zdjęcie do API dostarczonego przez klienta, a następnie pobranie i wyświetlenie zwróconego, przerobionego zdjęcia. Podczas tworzenia strony dla Vumo.ai miałem przyjemność po raz pierwszy skorzystać z TailwindCSS, który stał się moim ulubionym frameworkiem CSS.",
     },
     {
         pageName: "Medidesk.pl",
@@ -30,7 +33,7 @@ const realisations = [
             "Adobe After Effects",
         ],
         description:
-            "Medidesk.pl - szeroko rozbudowana strona internetowa, tworzona od zera przy użyciu BricksBuilder. Większość elementów na stronie została odpowiednio wystylizowana przy użyciu CSS'a. Oprócz standarowej procedury budowania strony internetowej oraz zastosowania kilku linijek JavaScriptu miałem przyjemność zrobić animację w programie Adobe After Effects, które przy użyciu LottieFiles znalazły się na stronie.",
+            "Szeroko rozbudowana strona internetowa, tworzona od zera przy użyciu BricksBuilder. Większość elementów na stronie została odpowiednio wystylizowana przy użyciu CSS'a. Oprócz standarowej procedury budowania strony internetowej oraz zastosowania kilku linijek JavaScriptu miałem przyjemność zrobić animację w programie Adobe After Effects, które przy użyciu LottieFiles znalazły się na stronie.",
     },
     {
         pageName: "Ziebicka14.pl",
@@ -38,7 +41,7 @@ const realisations = [
         image: ziebicka14,
         techStack: ["Elementor", "WordPress", "CSS", "JavaScript"],
         description:
-            "Ziebicka14.pl - częściowo współpracowałem przy tej stronie. Największym i najciekawszym zadaniem była implementacja modułu znajdującego się na podstronie mieszkania.",
+            "Częściowo współpracowałem przy tej stronie. Największym i najciekawszym zadaniem była implementacja modułu znajdującego się na podstronie mieszkania.",
     },
     {
         pageName: "Funk.pl",
@@ -46,38 +49,68 @@ const realisations = [
         image: funk,
         techStack: ["Stimulus", "Nunjucks", "Bootstrap", "TYPO3 CMS"],
         description:
-            "Funk.pl - współpraca przy stronie, pomagałem tworzyć poszczególne sekcje czy implementować pojedyncze rozwiązania. Po raz pierwszy pracowałem ze Stimulusem oraz Nunjucks.",
+            "Współpraca przy stronie, pomagałem tworzyć poszczególne sekcje czy implementować pojedyncze rozwiązania. Po raz pierwszy pracowałem ze Stimulusem oraz Nunjucks.",
     },
     {
-        pageName: "cialoizdrowie.pl",
+        pageName: "Cialoizdrowie.pl",
         link: "https://cialoizdrowie.pl/",
         image: cialoizdrowie,
         techStack: ["BricksBuilder", "WordPress", "CSS", "JavaScript"],
         description:
-            "Cialoizdrowie.pl - strona tworzona od zera. Projekt w całości wykonany w page builderze BricksBuilder.io wraz z WordPressem jako backend strony. Wykonałem wszystkie podstrony, sekcje, animacje oraz funkcjonalności dla tego projektu. BricksBuilder użyty do stworzenia tej strony, po tym projekcie został moim ulubionym narzędziem do tworzenia stron dla WordPress.",
+            "Strona tworzona od zera. Projekt w całości wykonany w page builderze BricksBuilder.io wraz z WordPressem jako backend strony. Wykonałem wszystkie podstrony, sekcje, animacje oraz funkcjonalności dla tego projektu. BricksBuilder użyty do stworzenia tej strony, po tym projekcie został moim ulubionym narzędziem do tworzenia stron dla WordPress.",
     },
     {
-        pageName: "parafiawszystkich.pl",
+        pageName: "Parafiawszystkich.pl",
         link: "https://parafiawszystkich.pl/",
         image: parafiawszystkich,
         techStack: ["Elementor", "WordPress", "CSS"],
         description:
-            "Cialoizdrowie.pl - strona tworzona od zera. Jest to mój pierwszy projekt jaki miałem przyjemność wykonać przy użyciu WordPressa oraz Elementora. Wykonałem wszystkie podstrony, sekcje, animacje oraz funkcjonalności dla tego projektu. Głównym wyzwaniem dla tej witryny była implementacja WCAG, które nie będzie wymagało pluginu.",
+            "Strona tworzona od zera. Jest to mój pierwszy projekt jaki miałem przyjemność wykonać przy użyciu WordPressa oraz Elementora. Wykonałem wszystkie podstrony, sekcje, animacje oraz funkcjonalności dla tego projektu. Głównym wyzwaniem dla tej witryny była implementacja WCAG, które nie będzie wymagało pluginu.",
     },
 ];
 
 const PortfolioSection = () => {
     return (
-        <div className="dark:bg-black-200">
-            <div className="container flex flex-col">
-                {realisations.map((realisation, key) => {
-                    return (
-                        <a key={key} target="_blank" href={realisation.link}>
-                            {realisation.pageName}
+        <div className="container flex flex-col pt-5 pb-10 gap-10 md:pt-10 md:pb-20 md:gap-20">
+            <h2 className="text-2xl text-center pt-5 md:-mb-8">
+                Moje <span className="font-black">portfolio</span>
+            </h2>
+            {realisations.map((realisation, key) => {
+                return (
+                    <div
+                        key={key}
+                        className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-16 md:[&>a]:even:order-2"
+                    >
+                        <a href={realisation.link}>
+                            <Image
+                                src={realisation.image}
+                                alt={realisation.pageName}
+                                quality={100}
+                                className="rounded-2xl md:w-full"
+                            />
                         </a>
-                    );
-                })}
-            </div>
+                        <div className="flex flex-col gap-4 md:justify-center">
+                            <h3>{realisation.pageName}</h3>
+                            <ul className="columns-2 list-disc list-inside">
+                                {realisation.techStack.map((item, key) => {
+                                    return <li key={key}>{item}</li>;
+                                })}
+                            </ul>
+                            <p className="text-gray-100">
+                                {realisation.description}
+                            </p>
+                            <a
+                                target="_blank"
+                                href={realisation.link}
+                                className="flex self-start items-center gap-2 pb-2"
+                            >
+                                <ReadMoreSVG />
+                                Zobacz stronę
+                            </a>
+                        </div>
+                    </div>
+                );
+            })}
         </div>
     );
 };

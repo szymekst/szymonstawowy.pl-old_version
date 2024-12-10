@@ -18,10 +18,6 @@ export const menuLinks = [
         url: "/",
     },
     {
-        name: "Realizacje",
-        url: "/realizacje",
-    },
-    {
         name: "Blog",
         url: "/blog",
     },
