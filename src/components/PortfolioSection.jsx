@@ -1,9 +1,11 @@
 import Image from "next/image";
 
-import arcelormittal from "@assets/img/arcelormittalWebsite.png";
 import cialoizdrowie from "@assets/img/cialoizdrowieWebsite.png";
 import parafiawszystkich from "@assets/img/parafiawszystkichWebsite.png";
 import vumo from "@assets/img/vumoWebsite.png";
+import ziebicka14 from "@assets/img/ziebicka14Website.png";
+import medidesk from "@assets/img/medideskWebsite.png";
+import funk from "@assets/img/funkWebsite.png";
 
 const realisations = [
     {
@@ -15,12 +17,36 @@ const realisations = [
             "Vumo.ai - strona tworzona od zera. Dla tego projektu wystąpiła konieczność poznania i zaimplementowania GatbsbyJS oraz GraphQL. Zintegrowanie strony z WordPressem pozwala na korzystanie z niego jako Headless CMS. W tym projekcie pojawiła się potrzeba napisania programu wysyłającego zdjęcie do API dostarczonego przez klienta, a następnie pobranie i wyświetlenie zwróconego, przerobionego zdjęcia. Podczas tworzenia strony dla Vumo.ai miałem przyjemność po raz pierwszy skorzystać z TailwindCSS, który stał się moim ulubionym frameworkiem CSS.",
     },
     {
-        pageName: "poland.arcelormittal.com",
-        link: "https://poland.arcelormittal.com/",
-        image: arcelormittal,
-        techStack: ["Nunjucks", "Stimulus", "Sass", "Bootstrap"],
+        pageName: "Medidesk.pl",
+        link: "https://medidesk.pl/",
+        image: medidesk,
+        techStack: [
+            "BricksBuilder",
+            "WordPress",
+            "CSS",
+            "JavaScript",
+            "Polylang",
+            "LottieFiles",
+            "Adobe After Effects",
+        ],
         description:
-            "Poland.arcelormittal.com - moim główny zadaniem do wykonania na tej stronie internetowej było stworzenie menu nawigacji w wersji desktopowej jak i zarówno mobilnej, pomijając integracje z Typo3. Przed rozpoczęciem pracy nad tym zadaniem zaszła potrzeba zaznajomienia się ze stackiem technologicznym panującym w tym projekcie - Nunjucks, Stimulus. Po za pracą nad menu, musiałem utworzyć jeszcze przyciski oraz większość ich motywów wraz z animacjami. Miałem też drobnostkowy wkład w poszczególne sekcje strony. Projekt ten nie był solowy, współpracowałem nad nim wraz z dwiema innymi osobami zajmującymi się frontem.",
+            "Medidesk.pl - szeroko rozbudowana strona internetowa, tworzona od zera przy użyciu BricksBuilder. Większość elementów na stronie została odpowiednio wystylizowana przy użyciu CSS'a. Oprócz standarowej procedury budowania strony internetowej oraz zastosowania kilku linijek JavaScriptu miałem przyjemność zrobić animację w programie Adobe After Effects, które przy użyciu LottieFiles znalazły się na stronie.",
+    },
+    {
+        pageName: "Ziebicka14.pl",
+        link: "https://ziebicka14.pl/",
+        image: ziebicka14,
+        techStack: ["Elementor", "WordPress", "CSS", "JavaScript"],
+        description:
+            "Ziebicka14.pl - częściowo współpracowałem przy tej stronie. Największym i najciekawszym zadaniem była implementacja modułu znajdującego się na podstronie mieszkania.",
+    },
+    {
+        pageName: "Funk.pl",
+        link: "https://funk.pl/",
+        image: funk,
+        techStack: ["Stimulus", "Nunjucks", "Bootstrap", "TYPO3 CMS"],
+        description:
+            "Funk.pl - współpraca przy stronie, pomagałem tworzyć poszczególne sekcje czy implementować pojedyncze rozwiązania. Po raz pierwszy pracowałem ze Stimulusem oraz Nunjucks.",
     },
     {
         pageName: "cialoizdrowie.pl",
@@ -43,7 +69,15 @@ const realisations = [
 const PortfolioSection = () => {
     return (
         <div className="dark:bg-black-200">
-            <div className="container"></div>
+            <div className="container flex flex-col">
+                {realisations.map((realisation, key) => {
+                    return (
+                        <a key={key} target="_blank" href={realisation.link}>
+                            {realisation.pageName}
+                        </a>
+                    );
+                })}
+            </div>
         </div>
     );
 };
