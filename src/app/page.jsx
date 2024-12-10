@@ -104,7 +104,7 @@ export default function Home() {
                         return (
                             <div
                                 key={index}
-                                className="aspect-[1] flex flex-col items-center justify-between p-6 rounded-[4px] border-2 border-black-100 dark:border-white group hover:bg-black-200 hover:dark:bg-white transition-all cursor-pointer md:py-9"
+                                className="aspect-[1] flex flex-col items-center justify-between p-6 rounded-[4px] border-2 border-black-100 dark:border-white group hover:bg-black-200 hover:dark:bg-white transition-all md:py-9"
                             >
                                 {skill.icon}
                                 <p className="text-black-100 text-base font-black text-center group-hover:text-white dark:text-white group-hover:dark:text-black-200">

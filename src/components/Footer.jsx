@@ -23,7 +23,11 @@ const Footer = () => {
                             return (
                                 <a
                                     key={index}
-                                    href={link.url}
+                                    href={
+                                        link.url.includes("@")
+                                            ? "mailto:" + link.url
+                                            : link.url
+                                    }
                                     className="hover_link text-xl dark:text-white"
                                 >
                                     {link.name}
@@ -35,11 +39,17 @@ const Footer = () => {
                         </p>
                         <p className="text-xl text-black-100 dark:text-white pt-8 md:pt-0">
                             🖤 to{" "}
-                            <a href="https://www.figma.com/community/file/1318529372146880502/illustration-based-portfolio-website-template">
+                            <a
+                                target="_blank"
+                                href="https://www.figma.com/community/file/1318529372146880502/illustration-based-portfolio-website-template"
+                            >
                                 Design
                             </a>{" "}
                             &{" "}
-                            <a href="https://www.figma.com/community/file/1235152009438565697/the-blog-a-web-personal-blog">
+                            <a
+                                target="_blank"
+                                href="https://www.figma.com/community/file/1235152009438565697/the-blog-a-web-personal-blog"
+                            >
                                 Design #2
                             </a>
                         </p>
