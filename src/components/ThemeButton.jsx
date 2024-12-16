@@ -2,7 +2,6 @@
 
 //Import React and NextJS Stuff
 import { useEffect, useState } from "react";
-import Image from "next/image";
 
 //Import SVGs
 import Circle from "@/assets/svg/circle.svg";
@@ -42,7 +41,7 @@ const ThemeButton = () => {
                 }}
             />
             <div className="relative flex gap-4">
-                <Circle className="absolute right-0 dark:left-0 dark:[&_rect]:fill-black-200" />
+                <Circle className="absolute left-[calc(100%-24px)] dark:left-0 dark:[&_rect]:fill-black-200 transition-all" />
                 <Sun />
                 <Moon />
             </div>

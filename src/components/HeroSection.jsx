@@ -24,7 +24,7 @@ const HeroSection = () => {
 
             <div
                 data-aos="fade-right"
-                className="flex flex-col gap-5 md:gap-7 mt-9 md:mt-0 md:-order-1 md:justify-center"
+                className="flex flex-col gap-5 md:gap-7 mt-9 md:mt-0 md:-order-1 md:justify-center select-none"
             >
                 <h1 className="text-3xl md:text-5xl">
                     Cześć! <br />
