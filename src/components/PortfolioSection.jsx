@@ -1,5 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
+
+import Atropos from "atropos/react";
+import "atropos/atropos.css";
 
 import cialoizdrowie from "@assets/img/cialoizdrowieWebsite.png";
 import parafiawszystkich from "@assets/img/parafiawszystkichWebsite.png";
@@ -90,12 +95,14 @@ const PortfolioSection = () => {
                             }
                             href={realisation.link}
                         >
-                            <Image
-                                src={realisation.image}
-                                alt={realisation.pageName}
-                                quality={100}
-                                className="rounded-2xl md:w-full"
-                            />
+                            <Atropos rotateXMax={5} rotateYMax={5}>
+                                <Image
+                                    src={realisation.image}
+                                    alt={realisation.pageName}
+                                    quality={100}
+                                    className="rounded-2xl md:w-full"
+                                />
+                            </Atropos>
                         </a>
                         <div className="flex flex-col gap-4 md:justify-center">
                             <h3 data-aos="fade-up">{realisation.pageName}</h3>
