@@ -72,7 +72,10 @@ const realisations = [
 const PortfolioSection = () => {
     return (
         <div className="container flex flex-col pt-5 pb-10 gap-10 md:pt-10 md:pb-20 md:gap-20">
-            <h2 className="text-2xl text-center pt-5 md:-mb-8">
+            <h2
+                data-aos="fade-up"
+                className="text-2xl text-center pt-5 md:-mb-8"
+            >
                 Moje <span className="font-black">portfolio</span>
             </h2>
             {realisations.map((realisation, key) => {
@@ -81,7 +84,12 @@ const PortfolioSection = () => {
                         key={key}
                         className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-16 md:[&>a]:even:order-2"
                     >
-                        <a href={realisation.link}>
+                        <a
+                            data-aos={
+                                key % 2 === 0 ? "fade-left" : "fade-right"
+                            }
+                            href={realisation.link}
+                        >
                             <Image
                                 src={realisation.image}
                                 alt={realisation.pageName}
@@ -90,16 +98,25 @@ const PortfolioSection = () => {
                             />
                         </a>
                         <div className="flex flex-col gap-4 md:justify-center">
-                            <h3>{realisation.pageName}</h3>
-                            <ul className="columns-2 list-disc list-inside">
+                            <h3 data-aos="fade-up">{realisation.pageName}</h3>
+                            <ul
+                                data-aos="fade-up"
+                                data-aos-delay="100"
+                                className="columns-2 list-disc list-inside"
+                            >
                                 {realisation.techStack.map((item, key) => {
                                     return <li key={key}>{item}</li>;
                                 })}
                             </ul>
-                            <p className="text-gray-100">
+                            <p
+                                data-aos="fade-up"
+                                data-aos-delay="100"
+                                className="text-gray-100"
+                            >
                                 {realisation.description}
                             </p>
                             <a
+                                data-aos="fade-up"
                                 target="_blank"
                                 href={realisation.link}
                                 className="flex self-start items-center gap-2 pb-2"

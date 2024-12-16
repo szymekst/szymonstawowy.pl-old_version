@@ -39,7 +39,10 @@ const mySkills = [
 
 const SkillSection = () => {
     return (
-        <div className="container py-5 flex flex-col gap-5 md:py-10">
+        <div
+            data-aos="fade-up"
+            className="container py-5 flex flex-col gap-5 md:py-10"
+        >
             <h2 className="text-2xl text-center">
                 Mój <span className="font-black">skill set</span>
             </h2>

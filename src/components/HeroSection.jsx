@@ -28,15 +28,15 @@ const HeroSection = () => {
             >
                 <h1 className="text-3xl md:text-5xl">
                     Cześć! <br />
-                    Jestem <span className="font-black">Szymek!</span>
+                    Jestem <span className="font-black">Szymon!</span>
                     <span className="animate-[wave_2.5s_linear_infinite] origin-[70%_70%] inline-block ml-2">
                         👋
                     </span>
                 </h1>
                 <p>
-                    W najbliższej przyszłości chciałbym aspirować do zostania
-                    Frontend Developerem, a dalej kto wie...
-                    <br /> Może i nawet Fullstack Developerem! 😊
+                    W przyszłości chciałbym stać się Frontend Developerem, a
+                    dalej kto wie...
+                    <br /> Może nawet Fullstack Developerem! 😊
                 </p>
                 <div className="flex gap-6">
                     {mySocials.map((social, index) => {
