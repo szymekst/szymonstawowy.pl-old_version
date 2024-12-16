@@ -38,7 +38,7 @@ const realisations = [
             "Adobe After Effects",
         ],
         description:
-            "Szeroko rozbudowana strona internetowa, tworzona od zera przy użyciu BricksBuilder. Większość elementów na stronie została odpowiednio wystylizowana przy użyciu CSS'a. Oprócz standarowej procedury budowania strony internetowej oraz zastosowania kilku linijek JavaScriptu miałem przyjemność zrobić animację w programie Adobe After Effects, które przy użyciu LottieFiles znalazły się na stronie.",
+            "Szeroko rozbudowana strona internetowa, tworzona od zera przy użyciu BricksBuilder. Większość elementów na stronie została odpowiednio wystylizowana przy użyciu CSS'a. Oprócz standardowej procedury budowania strony internetowej oraz zastosowania kilku linijek JavaScriptu miałem przyjemność zrobić animację w programie Adobe After Effects, które przy użyciu LottieFiles znalazły się na stronie.",
     },
     {
         pageName: "Ziebicka14.pl",
@@ -70,7 +70,7 @@ const realisations = [
         image: parafiawszystkich,
         techStack: ["Elementor", "WordPress", "CSS"],
         description:
-            "Strona tworzona od zera. Jest to mój pierwszy projekt jaki miałem przyjemność wykonać przy użyciu WordPressa oraz Elementora. Wykonałem wszystkie podstrony, sekcje, animacje oraz funkcjonalności dla tego projektu. Głównym wyzwaniem dla tej witryny była implementacja WCAG, które nie będzie wymagało pluginu.",
+            "Strona tworzona od zera. Jest to mój pierwszy projekt, jaki miałem przyjemność wykonać przy użyciu WordPressa oraz Elementora. Wykonałem wszystkie podstrony, sekcje, animacje oraz funkcjonalności dla tego projektu. Głównym wyzwaniem dla tej witryny była implementacja WCAG, które nie będzie wymagało pluginu.",
     },
 ];
 
