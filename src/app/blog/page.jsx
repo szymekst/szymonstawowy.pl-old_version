@@ -7,7 +7,6 @@ import getPostMetadata from "@/utils/getPostMetadata";
 import TitleSection from "@components/TitleSection";
 import PaginationControls from "@components/PaginationControls";
 import { createBlogPostSlug } from "@/utils/createBlogPostSlug";
-import RecentPosts from "@components/RecentPosts";
 import { metadata } from "@app/layout";
 
 export async function generateMetadata() {
@@ -89,7 +88,11 @@ const page = ({ searchParams }) => {
             {/* <RecentPosts /> */}
             <div className="dark:bg-black-200">
                 <div className="container">
-                    <h2 id="blog_heading" className="dark:text-white mb-4">
+                    <h2
+                        data-aos="fade-up"
+                        id="blog_heading"
+                        className="dark:text-white mb-4"
+                    >
                         Wszystkie wpisy na blogu
                     </h2>
                     <div
@@ -101,6 +104,7 @@ const page = ({ searchParams }) => {
                             return (
                                 <Link
                                     key={index}
+                                    data-aos="fade-up"
                                     href={createBlogPostSlug(
                                         "/blog/",
                                         post.title
