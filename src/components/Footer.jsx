@@ -28,16 +28,16 @@ const Footer = () => {
                                             ? "mailto:" + link.url
                                             : link.url
                                     }
-                                    className="hover_link text-xl dark:text-white"
+                                    className="hover_link dark:text-white"
                                 >
                                     {link.name}
                                 </a>
                             );
                         })}
-                        <p className="text-center text-black-100 text-xl dark:text-white  md:-order-1">
+                        <p className="text-center text-black-100 dark:text-white  md:-order-1">
                             &copy; {currentYear()}
                         </p>
-                        <p className="text-xl text-black-100 dark:text-white pt-8 md:pt-0">
+                        <p className="text-black-100 dark:text-white pt-8 md:pt-0">
                             🖤 to{" "}
                             <a
                                 target="_blank"
