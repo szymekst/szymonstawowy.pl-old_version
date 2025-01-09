@@ -23,7 +23,7 @@ export default function Home() {
                 {/* About me section */}
                 <AboutMeSection />
             </div>
-            <div className="bg-black-200 text-white">
+            <div className="bg-black-200 text-white relative z-10">
                 {/* Portofio section */}
                 <PortfolioSection />
             </div>

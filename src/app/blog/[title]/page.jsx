@@ -66,6 +66,7 @@ export default function BlogPost({ params }) {
                         height={430}
                         quality={100}
                         className="w-full max-h-[260px] md:max-h-[430px] object-cover"
+                        priority
                     />
                     <div className="flex flex-col gap-3">
                         <Markdown className="blog_post">

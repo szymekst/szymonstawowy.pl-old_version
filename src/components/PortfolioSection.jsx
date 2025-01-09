@@ -95,7 +95,7 @@ const PortfolioSection = () => {
                             }
                             href={realisation.link}
                         >
-                            <Atropos rotateXMax={5} rotateYMax={5}>
+                            <Atropos rotateXMax={10} rotateYMax={10}>
                                 <Image
                                     src={realisation.image}
                                     alt={realisation.pageName}
@@ -104,26 +104,20 @@ const PortfolioSection = () => {
                                 />
                             </Atropos>
                         </a>
-                        <div className="flex flex-col gap-4 md:justify-center">
-                            <h3 data-aos="fade-up">{realisation.pageName}</h3>
-                            <ul
-                                data-aos="fade-up"
-                                data-aos-delay="100"
-                                className="columns-2 list-disc list-inside"
-                            >
+                        <div
+                            data-aos="fade-up"
+                            className="flex flex-col gap-4 md:justify-center"
+                        >
+                            <h3>{realisation.pageName}</h3>
+                            <ul className="columns-2 list-disc list-inside">
                                 {realisation.techStack.map((item, key) => {
                                     return <li key={key}>{item}</li>;
                                 })}
                             </ul>
-                            <p
-                                data-aos="fade-up"
-                                data-aos-delay="100"
-                                className="text-gray-100"
-                            >
+                            <p className="text-gray-100">
                                 {realisation.description}
                             </p>
                             <a
-                                data-aos="fade-up"
                                 target="_blank"
                                 href={realisation.link}
                                 className="flex self-start items-center gap-2 pb-2"
