@@ -34,9 +34,8 @@ const HeroSection = () => {
                     </span>
                 </h1>
                 <p>
-                    W przyszłości chciałbym stać się Frontend Developerem, a
-                    dalej kto wie...
-                    <br /> Może nawet Fullstack Developerem! 😊
+                    „Nie ma rzeczy niemożliwych, <br /> są tylko rzeczy, których
+                    jeszcze nie próbowaliśmy.” <br /> — Jordan Belfort
                 </p>
                 <div className="flex gap-6">
                     {mySocials.map((social, index) => {

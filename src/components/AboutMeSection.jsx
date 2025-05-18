@@ -34,20 +34,13 @@ const AboutMeSection = () => {
                     Po zakończeniu edukacji rozpocząłem pracę w firmie
                     zajmującej się głównie CMS&apos;em TYPO3 oraz WordPress
                     (2022). Tam po raz pierwszy zetknąłem się z React oraz
-                    TailwindCSS podczas pisania projektu w GatsbyJS — zakochałem
-                    się w tym od pierwszego &#34;kodzenia&#34; 😊
+                    TailwindCSS podczas pisania projektu w GatsbyJS. 😊
                 </p>
                 <p data-aos="fade-up">
                     Poznawałem i poznaję do tej pory ten stack technologii,
                     wymieniłem jedynie GatsbyJS na NextJS, twierdzę, że pozwala
-                    mi to na więcej swobody oraz jest lepiej rozwinięte i
-                    zadbane. I właśnie przy użyciu tych narzędzi powstała ta
-                    strona — React, Next.JS, TailwindCSS oraz MDX.
-                </p>
-                <p data-aos="fade-up">
-                    Aktualnie programuje hobbistycznie, a kiedy tego nie robie
-                    to czytam sporo książek oraz boksuje — pomaga mi to zachować
-                    czystą i spokojną głowę.
+                    mi to na więcej swobody. I właśnie przy użyciu tych narzędzi
+                    powstała ta strona — React, Next.JS, TailwindCSS oraz MDX.
                 </p>
             </div>
         </div>
