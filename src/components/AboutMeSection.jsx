@@ -17,7 +17,7 @@ const AboutMeSection = () => {
                     O <span className="font-black">mnie</span>
                 </h2>
                 <p data-aos="fade-up">
-                    Jestem pasjonatom i samoukiem programowania w Frontendzie
+                    Jestem pasjonatem i samoukiem programowania w Frontendzie
                     (Next.js & Tailwind). Z ogromnym entuzjazmem podchodzę do
                     poznawania nowych technologii. Pixel perfect design i
                     pisanie jasnego, czytelnego, wysoce wydajnego kodu są dla
